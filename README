@@ -1,0 +1,28 @@
+
+Screenbytes is boilerplate code for byte-level image manipulation
+
+Written by Ben Newhouse, pulls from works by Junaed Sattar (jpeg
+stuff) and Christophe Tronche (X11 stuff)
+
+Requirements:
+    libjpeg (sudo port install jpeg on OS X)
+    X11 (usually comes with OSX)
+
+Usage:
+    Just include image_functions.h in your program (and add 
+    image_functions.c to your Makefile)
+
+    Refer to image_functions.h for the functions to get a bitmap
+    from a file and display said bitmap.
+
+    It's basically this simple:
+
+        int width, height, bpp, colorspace;
+        uint8_t * rgb = read_jpeg_file(argv[1], &width, &height, &bpp, &colorspace);
+        display_rgb(rgb, width, height);
+        free(rgb);
+
+Documentation:
+    Usage - Look at image_functions.h
+    How it works - Look at image_functions.c
+    Example - See the Makefile and main.c
